@@ -54,8 +54,10 @@
     #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && defined(__IPHONE_13_0) && \
         __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
     if (@available(iOS 13.0, *)) {
-      [self setTitleTextAttributes:@{NSForegroundColorAttributeName: textColor}
-                  forState:UIControlStateNormal];
+
+
+      [self setTitleTextAttributes:@{NSForegroundColorAttributeName: textColor, NSFontAttributeName: [UIFont fontWithName:@"Inter-Regular_Medium" size:16.f]}
+                            forState:UIControlStateNormal];
     }
     #endif
 }
@@ -66,10 +68,11 @@
 #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && defined(__IPHONE_13_0) && \
     __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
   if (@available(iOS 13.0, *)) {
+    
     [self setSelectedSegmentTintColor:tintColor];
-    [self setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}
+    [self setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"Inter-Regular_Semi-Bold" size:16.f]}
                         forState:UIControlStateSelected];
-    [self setTitleTextAttributes:@{NSForegroundColorAttributeName: tintColor}
+    [self setTitleTextAttributes:@{NSForegroundColorAttributeName: tintColor, NSFontAttributeName: [UIFont fontWithName:@"Inter-Regular_Medium" size:16.f]}
                          forState:UIControlStateNormal];
   }
 #endif
